@@ -70,12 +70,14 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-
-	size_t size = binary_tree_size(tree);
-	size_t height = binary_tree_height(tree) + 1;
-
-	if ((power(2, height) - 1) == (int) size)
-		return (1);
 	else
-		return (0);
+	{
+		size_t size = binary_tree_size(tree);
+		size_t height = binary_tree_height(tree) + 1;
+
+		if ((power(2, height) - 1) == (int) size)
+			return (1);
+		else
+			return (0);
+	}
 }
